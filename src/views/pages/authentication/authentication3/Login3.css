@@ -1,0 +1,176 @@
+.loginSection {
+    display: flex;
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+  }
+  .imgSection,
+  .formSection{
+     flex: 1;
+  }
+  .imgSection .backgroundImg{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    object-fit: contain;
+  }
+  .navhead {
+    position: absolute;
+    left:60px;
+    top: -25px;
+    font-size: 30px;
+    
+  }
+  .span-go {
+  color: #FC8019;
+  } 
+  
+  .formSection{
+  height: 100vh;
+  width: 50%;
+  background-color: white;
+  
+  }
+  .formSection form{
+  height: 310px;
+  width: 400px;
+  margin: 25% 8%;
+  border: 2px solid lightgray;
+   text-align: left;
+   box-shadow: rgba(0, 0, 0, 0.02) 0px 54px 55px, rgba(0, 0, 0, 0.02) 0px -12px 30px, rgba(0, 0, 0, 0.02) 0px 4px 6px, rgba(0, 0, 0, 0.02) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  
+  
+  
+  }
+  h4{
+  color: #FC8019;
+  font-size: 30px;
+  font-weight: 700;
+  margin: 15px;
+  text-align: center;
+   
+  } .inputWithIcon {
+  position: relative;
+  width: 80%;
+  margin: 10px;
+  }
+  .inputWithIcon input {
+  padding-left: 0; 
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 13px;
+  }
+  
+  .imgSection,
+  .formSection {
+    flex: 1;
+  }
+  
+  /* .imgSection {
+    position: absolute;
+    overflow: hidden;
+  }
+  */
+  
+  .imgSection .backgroundImg {
+    position: absolute;
+    top: 0;
+    left:0;
+    width: auto;
+    height: 100vh;
+    object-fit: contain;
+  }
+  .navhead {
+    position: absolute;
+    left:60px;
+    top: -25px;
+    font-size: 30px;
+    
+  }
+  
+  .logo{
+    height: 37px;
+    width: 37px;
+    position: absolute;
+    top: 7px;
+    left: 16px;
+  } 
+  
+  
+  
+  h4{
+    color: #FC8019;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 15px;
+    text-align: center;
+     
+  }
+  
+  
+  .inputWithIcon {
+    /* position: relative; */
+    width: 83%;
+    margin: 10px;
+  }
+  
+  .inputWithIcon input {
+    padding-left: 10px; 
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 13px;
+    margin-left: 0;
+   }
+  .icon {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%); 
+    color: black;
+  }
+  .eye-icon{
+    position: absolute;
+    right: -30px;
+    top: 20px;
+  
+  }
+  
+  .forgotSection a{
+    font-size: 13px;
+    margin: 14px 15px;
+    text-decoration: none;
+    color:black;
+  }
+  .subBtn{
+    padding: 10px;
+    width: 90%;
+    border: none;
+    margin: 15px;
+    background-color: #FC8019;
+    color: white;
+    font-size: 15px;
+  }
+  
+  
+  @media (max-width: 800px) {
+  .loginSection {
+    flex-direction: column;
+    align-items: center;
+  }
+  .backgroundImg{
+  height: 60vh;
+  }
+  .formSection {
+    width: 80%;
+     position: absolute;
+     top: 80%;
+   }
+  
+  .imgSection .backgroundImg {
+    height: 60vh;
+    top: 15%;
+    
+  }
+  }
