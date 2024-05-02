@@ -11,6 +11,11 @@ const Activitymanagement=()=>(
           variant="outlined"
           fullWidth
           margin="normal"
+          sx={{
+            '& input:focus + fieldset': {
+                borderColor: 'red !important',
+            },
+        }}
         />
         <Button variant="contained" color="primary" type="submit">
           Submit

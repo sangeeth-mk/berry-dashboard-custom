@@ -5,25 +5,25 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useTheme } from '@mui/material/styles';
 import {
   Drawer,
-  Fab,
+  // Fab,
   FormControl,
   FormControlLabel,
   Grid,
-  IconButton,
+  // IconButton,
   Radio,
   RadioGroup,
   Slider,
-  Tooltip,
+  // Tooltip,
   Typography
 } from '@mui/material';
-import { IconSettings } from '@tabler/icons-react';
+// import { IconSettings } from '@tabler/icons-react';
 
 // third-party
 import PerfectScrollbar from 'react-perfect-scrollbar';
 
 // project imports
 import SubCard from 'ui-component/cards/SubCard';
-import AnimateButton from 'ui-component/extended/AnimateButton';
+// import AnimateButton from 'ui-component/extended/AnimateButton';
 import { SET_BORDER_RADIUS, SET_FONT_FAMILY } from 'store/actions';
 import { gridSpacing } from 'store/constant';
 
@@ -91,7 +91,7 @@ const Customization = () => {
   return (
     <>
       {/* toggle button */}
-      <Tooltip title="Live Customize">
+      {/* <Tooltip title="Live Customize">
         <Fab
           component="div"
           onClick={handleToggle}
@@ -109,14 +109,14 @@ const Customization = () => {
             right: 10,
             zIndex: theme.zIndex.speedDial
           }}
-        >
-          <AnimateButton type="rotate">
+        > */}
+          {/* <AnimateButton type="rotate">
             <IconButton color="inherit" size="large" disableRipple>
               <IconSettings />
             </IconButton>
-          </AnimateButton>
-        </Fab>
-      </Tooltip>
+          </AnimateButton> */}
+        {/* </Fab>
+      </Tooltip> */}
 
       <Drawer
         anchor="right"

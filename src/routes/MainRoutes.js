@@ -3,6 +3,8 @@ import { lazy } from 'react';
 // project imports
 import MainLayout from 'layout/MainLayout';
 import Loadable from 'ui-component/Loadable';
+
+// import Customise from 'views/customise'
      
 // dashboard routing
 const DashboardDefault = Loadable(lazy(() => import('views/dashboard/Default')));
@@ -33,7 +35,8 @@ const Report=Loadable(lazy(()=>import('views/report')))
 //myprofile routing
 const Myprofile=Loadable(lazy(()=>import('views/my-profile')))
 
-//logout routing
+//support routing
+const Support = Loadable(lazy(()=>import('views/support')))
 
 const Logout=Loadable(lazy(()=>import('views/logout')))
 // ==============================|| MAIN ROUTING ||============================== //
@@ -74,6 +77,10 @@ const MainRoutes = {
       element:<Expense/>
     },
     {
+      path:'support',
+      element:<Support/>
+    },
+    {
       path:'report',
       element:<Report/>
     },
@@ -81,6 +88,7 @@ const MainRoutes = {
       path:'my-profile',
       element:<Myprofile/>
     },
+    
     {
       path:'logout',
       element:<Logout/>

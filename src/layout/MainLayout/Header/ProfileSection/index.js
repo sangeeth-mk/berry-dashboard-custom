@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+// import Customisation from 'layout/MainLayout/Header/ProfileSection/index';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
@@ -38,6 +39,8 @@ import User1 from 'assets/images/users/user-round.svg';
 
 // assets
 import { IconLogout, IconSettings, IconUser } from '@tabler/icons-react';
+// import Customization from 'layout/Customization';
+// import customise from 'views/Customise/customise';
 
 // ==============================|| PROFILE MENU ||============================== //
 
@@ -55,8 +58,10 @@ const ProfileSection = () => {
    * anchorRef is used on different componets and specifying one type leads to other components throwing an error
    * */
   const anchorRef = useRef(null);
+
   const handleLogout = async () => {
     console.log('Logout');
+    navigate(<customise/>)
   };
 
   const handleClose = (event) => {
@@ -77,6 +82,8 @@ const ProfileSection = () => {
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
   };
+
+  
 
   const prevOpen = useRef(open);
   useEffect(() => {
@@ -256,6 +263,7 @@ const ProfileSection = () => {
                           </ListItemIcon>
                           <ListItemText primary={<Typography variant="body2">Account Settings</Typography>} />
                         </ListItemButton>
+
                         <ListItemButton
                           sx={{ borderRadius: `${customization.borderRadius}px` }}
                           selected={selectedIndex === 1}
@@ -284,6 +292,7 @@ const ProfileSection = () => {
                             }
                           />
                         </ListItemButton>
+
                         <ListItemButton
                           sx={{ borderRadius: `${customization.borderRadius}px` }}
                           selected={selectedIndex === 4}
@@ -294,6 +303,8 @@ const ProfileSection = () => {
                           </ListItemIcon>
                           <ListItemText primary={<Typography variant="body2">Logout</Typography>} />
                         </ListItemButton>
+
+
                       </List>
                     </Box>
                   </PerfectScrollbar>
