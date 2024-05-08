@@ -32,8 +32,6 @@ const Expense=Loadable(lazy(()=>import('views/expense')))
 
 const Report=Loadable(lazy(()=>import('views/report')))
 
-//myprofile routing
-const Myprofile=Loadable(lazy(()=>import('views/my-profile')))
 
 //support routing
 const Support = Loadable(lazy(()=>import('views/support')))
@@ -84,11 +82,7 @@ const MainRoutes = {
       path:'report',
       element:<Report/>
     },
-    {
-      path:'my-profile',
-      element:<Myprofile/>
-    },
-    
+   
     {
       path:'logout',
       element:<Logout/>

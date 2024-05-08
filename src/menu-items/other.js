@@ -23,17 +23,14 @@ const other = {
     {
       id:'support',title:'Support Enquiry',type:'item',url:'/support',icon:IconHeadset,breadcrumbs:false
     },
-  
-    {
-      id:'report',title:'Report',type:'item',url:'/report',icon:IconFileReport,breadcrumbs:false
-    },
-    {
-      id:'myprofile',title:'My Profile' ,type:'item',url:'/my-profile',icon:IconUser,breadcrumbs:false
-    },
-    
+ 
     { 
       id: 'my-team', title: 'My Team', type: 'item', url: '/my-team', icon: icons.IconUsersGroup, breadcrumbs: false
      },
+     
+    {
+      id:'report',title:'Report',type:'item',url:'/report',icon:IconFileReport,breadcrumbs:false
+    },
     {
       id:'logout',title:'Logout',type:'item',url:'/logout',icon:IconLogout,breadcrumbs:false
     }

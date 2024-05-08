@@ -44,17 +44,17 @@ const Myteam = () => {
     },
   });
 
-  useEffect(() => {
-    const savedTeamMembers = JSON.parse(localStorage.getItem('teamMembers'));
-    if (savedTeamMembers) {
-      setTeamMembers(savedTeamMembers);
-    }
-  }, []);
+useEffect(() => {
+  const savedTeamMembers = JSON.parse(localStorage.getItem('myTeamMembers')); // Use 'myTeamMembers' key
+  if (savedTeamMembers) {
+    setTeamMembers(savedTeamMembers);
+  }
+}, []);
 
-  
-  useEffect(() => {
-    localStorage.setItem('teamMembers', JSON.stringify(teamMembers));
-  }, [teamMembers]);
+useEffect(() => {
+  localStorage.setItem('myTeamMembers', JSON.stringify(teamMembers)); // Use 'myTeamMembers' key
+}, [teamMembers]);
+
 
   const handleOpen = () => {
     setOpen(true);
@@ -99,7 +99,7 @@ const Myteam = () => {
   };
 
   return (
-    <MainCard title="My team">
+    <MainCard title="My Team">
       <Typography variant="body2">
         <Button variant="contained" style={{ backgroundColor: "#fc8019" }} onClick={handleOpen}>
           Add Member
@@ -169,7 +169,7 @@ const Myteam = () => {
               }}
               />
             </DialogContent>
-            <DialogActions>
+            <DialogActions style={{marginRight:"20px",marginBottom:"10px"}}>
               <Button onClick={handleClose} style={{ backgroundColor: "#fc8019" }} variant="contained">
                 Cancel
               </Button>
@@ -185,10 +185,10 @@ const Myteam = () => {
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell>Name</TableCell>
-                    <TableCell>Email</TableCell>
-                    <TableCell>Mobile</TableCell> 
-                    <TableCell>Action</TableCell>
+                    <TableCell>NAME</TableCell>
+                    <TableCell>EMAIL</TableCell>
+                    <TableCell>MOBILE</TableCell> 
+                    <TableCell>ACTION</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>

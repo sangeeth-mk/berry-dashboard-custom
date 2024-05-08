@@ -39,7 +39,7 @@ import User1 from 'assets/images/users/user-round.svg';
 
 // assets
 import { IconLogout, IconSettings, IconUser } from '@tabler/icons-react';
-// import Customization from 'layout/Customization';
+import Customization from 'layout/Customization';
 // import customise from 'views/Customise/customise';
 
 // ==============================|| PROFILE MENU ||============================== //
@@ -54,6 +54,8 @@ const ProfileSection = () => {
   // const [notification, setNotification] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const [open, setOpen] = useState(false);
+  const [custom,setCustom]=useState(false);
+
   /**
    * anchorRef is used on different componets and specifying one type leads to other components throwing an error
    * */
@@ -73,12 +75,18 @@ const ProfileSection = () => {
 
   const handleListItemClick = (event, index, route = '') => {
     setSelectedIndex(index);
-    handleClose(event);
-
+    // handleClose(event);
+event.preventDefault()
     if (route && route !== '') {
       navigate(route);
     }
+
+    // setCursor(true)
+    // <Customization/>
+    setCustom(true)
+
   };
+
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
   };
@@ -96,10 +104,11 @@ const ProfileSection = () => {
 
   return (
     <>
+    <h1 style={{marginLeft:"20px"}}>FSD</h1>
       <Chip
         sx={{
           height: '48px',
-           marginLeft:'80%',
+           marginLeft:'70%',
           alignItems: 'center',
           borderRadius: '27px',
           transition: 'all .2s ease-in-out',
@@ -131,6 +140,7 @@ const ProfileSection = () => {
             color="inherit"
           />
         }
+
         label={<IconSettings stroke={1.5} size="1.5rem" color={theme.palette.primary.main} />}
         variant="outlined"
         ref={anchorRef}
@@ -139,6 +149,7 @@ const ProfileSection = () => {
         onClick={handleToggle}
         color="primary"
       />
+
       <Popper
         placement="bottom-end"
         open={open}
@@ -253,22 +264,14 @@ const ProfileSection = () => {
                           }
                         }}
                       >
-                        <ListItemButton
-                          sx={{ borderRadius: `${customization.borderRadius}px` }}
-                          selected={selectedIndex === 0}
-                          onClick={(event) => handleListItemClick(event, 0, '#')}
-                        >
-                          <ListItemIcon>
-                            <IconSettings stroke={1.5} size="1.3rem" />
-                          </ListItemIcon>
-                          <ListItemText primary={<Typography variant="body2">Account Settings</Typography>} />
-                        </ListItemButton>
 
-                        <ListItemButton
+                       <ListItemButton
                           sx={{ borderRadius: `${customization.borderRadius}px` }}
                           selected={selectedIndex === 1}
                           onClick={(event) => handleListItemClick(event, 1, '#')}
                         >
+                                                    {/* {custom && <Customization/>} */}
+
                           <ListItemIcon>
                             <IconUser stroke={1.5} size="1.3rem" />
                           </ListItemIcon>
@@ -295,6 +298,20 @@ const ProfileSection = () => {
 
                         <ListItemButton
                           sx={{ borderRadius: `${customization.borderRadius}px` }}
+                          selected={selectedIndex === 0}
+                          onClick={(event) => handleListItemClick(event, 0, '#')}
+                        >
+                          <ListItemIcon>
+                            <IconSettings stroke={1.5} size="1.3rem" />
+                          </ListItemIcon>
+                          <ListItemText primary={<Typography variant="body2">Account Settings</Typography>} />
+                        </ListItemButton>
+
+                            {/* {cursor && <h1>hello</h1>} */}
+                       
+
+                        <ListItemButton
+                          sx={{ borderRadius: `${customization.borderRadius}px` }}
                           selected={selectedIndex === 4}
                           onClick={handleLogout}
                         >
@@ -314,6 +331,8 @@ const ProfileSection = () => {
           </Transitions>
         )}
       </Popper>
+      {selectedIndex === 0 && <Customization />}
+
     </>
   );
 };
